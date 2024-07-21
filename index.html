@@ -88,23 +88,45 @@
             cursor: pointer;
             width: calc(100% - 22px);
         }
+        @keyframes floating {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+        .animated-text {
+            display: inline-block;
+            animation: floating 2s infinite;
+        }
+        .subscribe-message {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            color: black;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
     </style>
 </head>
 <body>
     <div class="password-banner" id="passwordBanner">
         <div class="banner-content">
-            <h2>Enter Password</h2>
+            <h2 class="animated-text">Enter Password</h2>
             <input type="password" id="passwordInput" placeholder="Password">
             <button onclick="checkPassword()">Submit</button>
         </div>
     </div>
     <div class="container" id="contentContainer">
-    <div class="match-card">
+        <div class="match-card">
             <h2>14/07/24</h2>
             <p>Sarandi vs Ferro Carril Oeste</p>
             <div class="outcome">
-                <span>ov1.5</span>
-                <span class="result">...</span>
+                <span>U1.5</span>
+                <span class="result">Won</span>
                 <span>2.00</span>
                 <span>0 - 0</span>
             </div>
@@ -114,282 +136,12 @@
             <p>Ekenas vs FC Inter Turku</p>
             <div class="outcome">
                 <span>Away/ov2.5</span>
-                <span class="result">...</span>
-                <span>2.00</span>
-                <span>0 - 0</span>
-            </div>
-        </div>
-    <div class="match-card">
-            <h2>8/07/24</h2>
-            <p>Tirol vs Copenhagen</p>
-            <div class="outcome">
-                <span>Away</span>
                 <span class="result">Won</span>
                 <span>2.00</span>
-                <span>0 - 5</span>
-            </div>
-        </div>
-        <div class="match-card">
-            <h2>8/07/24</h2>
-            <p>Akatemia vs PPJ</p>
-            <div class="outcome">
-                <span>Home</span>
-                <span class="result">Won</span>
-                <span>2.20</span>
-                <span>3 - 2</span>
-            </div>
-        </div>
-    <div class="match-card">
-            <h2>6/07/24</h2>
-            <p>Montevideo vs Atenas</p>
-            <div class="outcome">
-                <span>Home</span>
-                <span class="result">...</span>
-                <span>2.00</span>
-                <span>1 - 1</span>
-            </div>
-        </div>
-        <div class="match-card">
-            <h2>6/07/24</h2>
-            <p>SalPa vs FF Jaro</p>
-            <div class="outcome">
-                <span>Away</span>
-                <span class="result">Won</span>
-                <span>2.10</span>
-                <span>0 - 1</span>
-            </div>
-        </div>
-    <div class="match-card">
-            <h2>5/07/24</h2>
-            <p>WSG Tirol vs FC Vaduz</p>
-            <div class="outcome">
-                <span>GG/Yes</span>
-                <span class="result">Won</span>
-                <span>1.70</span>
-                <span>2 - 4</span>
-            </div>
-        </div>
-        <div class="match-card">
-            <h2>5/07/24</h2>
-            <p>FA Siauliai vs FK Transinvest</p>
-            <div class="outcome">
-                <span>GG/Yes</span>
-                <span class="result">Los</span>
-                <span>2.00</span>
-                <span>1 - 0</span>
-            </div>
-        </div>
-    <div class="match-card">
-            <h2>4/07/24</h2>
-            <p>UMF Njardvik vs UMF Grindavik</p>
-            <div class="outcome">
-                <span>1X/ov2.5</span>
-                <span class="result">Los</span>
-                <span>2.10</span>
-                <span>0 -1</span>
-            </div>
-        </div>
-        <div class="match-card">
-            <h2>4/07/24</h2>
-            <p>Akatemia/2 vs JS Hercules</p>
-            <div class="outcome">
-                <span>1/GGYes</span>
-                <span class="result">Los</span>
-                <span>2.70</span>
-                <span>4 - 4</span>
-            </div>
-        </div>
-    <div class="match-card">
-            <h2>2/07/24</h2>
-            <p>Akureyri vs Valur Reykjavik</p>
-            <div class="outcome">
-                <span>Away</span>
-                <span class="result">Los</span>
-                <span>2.20</span>
-                <span>3 - 2</span>
-            </div>
-        </div>
-        <div class="match-card">
-            <h2>2/07/24</h2>
-            <p>Zenit Saint Petersburg vs FK Sochi</p>
-            <div class="outcome">
-                <span>ov2.5</span>
-                <span class="result">Won</span>
-                <span>1.80</span>
-                <span>5 - 2</span>
-            </div>
-        </div>
-    <div class="match-card">
-            <h2>1/07/24</h2>
-            <p>Gyeongnam FC vs Jeonnam</p>
-            <div class="outcome">
-                <span>ov1.5</span>
-                <span class="result">Won</span>
-                <span>1.40</span>
-                <span>2 - 4</span>
-            </div>
-        </div>
-        <div class="match-card">
-            <h2>1/07/24</h2>
-            <p> IF Karlstad Fotbol vs Piteaa </p>
-            <div class="outcome">
-                <span>Home</span>
-                <span class="result">Won</span>
-                <span>1.80</span>
-                <span>6 - 0</span>
-            </div>
-        </div>
-    <div class="match-card">
-            <h2>30/06/24</h2>
-            <p> Fjolnr vs Grotta</p>
-            <div class="outcome">
-                <span>Home/Yes</span>
-                <span class="result">Won</span>
-                <span>2.70</span>
-                <span>5 - 2</span>
-            </div>
-        </div>
-        <div class="match-card">
-            <h2>30/06/24</h2>
-            <p> Tukums vs Alberts</p>
-            <div class="outcome">
-                <span>GG/Yes</span>
-                <span class="result">Won</span>
-                <span>2.00</span>
-                <span>1 - 3</span>
-            </div>
-        </div>
-    <div class="match-card">
-            <h2>29/06/24</h2>
-            <p> Borisov vs minsk</p>
-            <div class="outcome">
-                <span>Away</span>
-                <span class="result">Won</span>
-                <span>1.70</span>
-                <span>0 - 2</span>
-            </div>
-        </div>
-        <div class="match-card">
-            <h2>29/06/24</h2>
-            <p> Kaunas vs Fk Zalgris</p>
-            <div class="outcome">
-                <span>GG/Yes</span>
-                <span class="result">Won</span>
-                <span>2.00</span>
-                <span>0 - 0</span>
-            </div>
-        </div>
-    <div class="match-card">
-            <h2>28/06/24</h2>
-            <p> VJS vs Tapereen</p>
-            <div class="outcome">
-                <span>Home/ov1.5</span>
-                <span class="result">Won</span>
-                <span>2.20</span>
-                <span>3 - 1</span>
-            </div>
-        </div>
-        <div class="match-card">
-            <h2>28/06/24</h2>
-            <p> Mlada vs FC Vansdorf</p>
-            <div class="outcome">
-                <span>Home/Yes</span>
-                <span class="result">Won</span>
-                <span>2.40</span>
-                <span>3 - 1</span>
-            </div>
-        </div>
-    <div class="match-card">
-            <h2>27/06/24</h2>
-            <p> Riteriai vs FC Neptunas</p>
-            <div class="outcome">
-                <span>Home</span>
-                <span class="result">Won</span>
-                <span>2.20</span>
-                <span>5 - 1</span>
-            </div>
-        </div>
-        <div class="match-card">
-            <h2>27/06/24</h2>
-            <p>Army Red vs Aryan FC</p>
-            <div class="outcome">
-                <span>GG Yes</span>
-                <span class="result">Los</span>
-                <span>1.70</span>
-                <span>0 - 6</span>
-            </div>
-        </div>
-    <div class="match-card">
-            <h2>26/06/24</h2>
-            <p>jeonbuk - pohang</p>
-            <div class="outcome">
-                <span>GG Yes</span>
-                <span class="result">Won</span>
-                <span>2.40</span>
-                <span>1 - 1</span>
-            </div>
-        </div>
-        <div class="match-card">
-            <h2>26/06/24</h2>
-            <p>Forward - skovde</p>
-            <div class="outcome">
-                <span>Away</span>
-                <span class="result">Won</span>
-                <span>1.40</span>
-                <span>1 - 2</span>
-            </div>
-        </div>
-    <div class="match-card">
-            <h2>25/06/24</h2>
-            <p>zenit - Fc tver</p>
-            <div class="outcome">
-                <span>Home/GG No</span>
-                <span class="result">Won</span>
-                <span>4.10</span>
-                <span>1 - 0</span>
-            </div>
-        </div>
-        <div class="match-card">
-            <h2>24/06/24</h2>
-            <p>Brikama - Galaxy.</p>
-            <div class="outcome">
-                <span>Home/GG Yes</span>
-                <span class="result">Won</span>
-                <span>3.85</span>
-                <span>2 - 1</span>
-            </div>
-        </div>
-        <div class="match-card">
-            <h2>23/06/24</h2>
-            <p>Torpedo - Minsk</p>
-            <div class="outcome">
-                <span>Home/GG No</span>
-                <span class="result">Won</span>
-                <span>4.40</span>
-                <span>1 - 0</span>
+                <span>0 - 7</span>
             </div>
         </div>
         <!-- Additional match cards -->
-        <div class="match-card">
-            <h2>23/06/24</h2>
-            <p>Ayema - Ganisa</p>
-            <div class="outcome">
-                <span>Home Wins</span>
-                <span class="result">won</span>
-                <span>2.00</span>
-                <span>3 - 1</span>
-            </div>
-        </div>
-        <div class="match-card">
-            <h2>22/06/24</h2>
-            <p>Rydamlere - NSW</p>
-            <div class="outcome">
-                <span>Over 5.5</span>
-                <span class="result">Won</span>
-                <span>3.75</span>
-                <span>0 - 6</span>
-            </div>
-        </div>
     </div>
     <script>
         function checkPassword() {
@@ -399,9 +151,20 @@
                 document.getElementById('contentContainer').style.display = 'block';
                 document.body.style.overflow = 'auto';
             } else {
-                alert('Incorrect password. Please try again.');
+                const bannerContent = document.querySelector('.banner-content');
+                bannerContent.innerHTML = `
+                    <div class="subscribe-message">
+                        <h2>Incorrect Password</h2>
+                        <p>Want to start winning bets? Subscribe now for access to exclusive match predictions and increase your chances of winning!</p>
+                        <button onclick="subscribe()">Subscribe</button>
+                    </div>
+                `;
             }
+        }
+
+        function subscribe() {
+            alert('Refresh this page!');
         }
     </script>
 </body>
-</html>
+    </html>
